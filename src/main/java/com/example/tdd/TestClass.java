@@ -6,17 +6,17 @@ import static org.junit.Assert.assertTrue;
 
 public class TestClass {
     @Test
-    public void testMultiplication() {
-//        Dollar five = new Dollar(5);
-//        Dollar dollar = five.times(2);
-//        assertEquals(10, dollar.amount);
-//
-//        dollar = five.times(2);
-//        assertEquals(10, dollar.amount);
+    public void testMultiplication(){
+        Dollar five = new Dollar(5);
+        assertEquals(new Dollar(10), five.times(2));
+        assertEquals(new Dollar(15), five.times(3));
     }
 
     @Test
-    public void testEquality () {
-        assertTrue(new Franc(5).equals(new Franc(5)));
+    public void testFrancMultiplication(){
+        Franc five = new Franc(5);
+        assertEquals(new Franc(10), five.times(2));
+        assertEquals(new Franc(15), five.times(3));
     }
+
 }

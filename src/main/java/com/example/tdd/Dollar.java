@@ -9,7 +9,7 @@ public class Dollar extends Money {
     public Dollar times(int multiplier) {
         return new Dollar(amount*multiplier);
     }
-    public boolean equals(Object o) {
-        return this.amount == ((Dollar) o).amount;
-    }
+//    public boolean equals(Object o) {
+//        return this.amount == ((Dollar) o).amount;
+//    }
 }
