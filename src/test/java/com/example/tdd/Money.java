@@ -1,6 +1,6 @@
 package com.example.tdd;
 
-public abstract class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -17,12 +17,15 @@ public abstract class Money {
         return new Franc(amount, "CHW");
     }
 
-    abstract Money times(int multiplier);
 
     public boolean equals(Object o) {
         //amount 값이 같으면 같은 걸로 간주
         Money money = (Money) o;
         return getClass().equals(money.getClass()) && this.amount == money.amount ;
+    }
+
+    public Money times(int multiplier) {
+        return new Money(amount*multiplier, currency);
     }
     // 통화 기호를 리턴
     String currency() {
