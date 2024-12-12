@@ -1,10 +1,21 @@
 package com.example.tdd;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+
+    static Dollar dollar (int amount) {
+        return new Dollar(amount);
+    }
+
+    static Franc franc (int amount) {
+        return new Franc(amount);
+    }
+
+    abstract Money times(int multiplier);
 
     public boolean equals(Object o) {
         //amount 값이 같으면 같은 걸로 간주
-        return this.amount == ((Money) o).amount;
+        Money money = (Money) o;
+        return getClass().equals(money.getClass()) && this.amount == money.amount ;
     }
 }
