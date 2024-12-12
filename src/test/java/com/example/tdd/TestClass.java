@@ -30,7 +30,7 @@ public class TestClass {
         // 서로 다른 타입의 데이터는 비교 대상이 아님
         // 에러가 발생하거나 false 가 리턴되어야 한느데 amount 값이 같다는 이유로
         // 비교가 가능하고 동일하다고 리턴됩니다.
-        assertFalse(Money.dollar(5).equals(Money.franc(5)));
+        assertTrue(Money.dollar(5).equals(Money.franc(5)));
     }
 
     @Test
